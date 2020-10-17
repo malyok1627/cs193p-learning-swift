@@ -9,20 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HStack() {
+        HStack {
             ForEach(0..<4) { index in
-                ZStack() {
-                    RoundedRectangle(cornerRadius: 10.0)
-                        .fill(Color.white)
-                    RoundedRectangle(cornerRadius: 10.0)
-                        .stroke(lineWidth: 3.0)
-                    Text("👻")
-                }
+                CardView()
             }
         }
         .foregroundColor(Color.orange)
         .padding()
         .font(Font.largeTitle)
+    }
+}
+
+struct CardView: View {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10.0)
+                .fill(Color.white)
+            RoundedRectangle(cornerRadius: 10.0)
+                .stroke(lineWidth: 3.0)
+            Text("👻")
+        }
     }
 }
 
