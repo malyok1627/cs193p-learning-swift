@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         HStack {
             ForEach(0..<4) { index in
-                CardView()
+                CardView(isFaceUp: false)
             }
         }
         .foregroundColor(Color.orange)
@@ -21,13 +21,19 @@ struct ContentView: View {
 }
 
 struct CardView: View {
+    var isFaceUp : Bool
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10.0)
-                .fill(Color.white)
-            RoundedRectangle(cornerRadius: 10.0)
-                .stroke(lineWidth: 3.0)
-            Text("👻")
+            if isFaceUp {
+                RoundedRectangle(cornerRadius: 10.0)
+                    .fill(Color.white)
+                RoundedRectangle(cornerRadius: 10.0)
+                    .stroke(lineWidth: 3.0)
+                Text("👻")
+            } else {
+                RoundedRectangle(cornerRadius: 10.0)
+                    .fill()
+            }
         }
     }
 }
