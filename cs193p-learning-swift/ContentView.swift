@@ -18,7 +18,7 @@ struct ContentView: View {
                 }
             }
         }
-        .foregroundColor(Color.orange)
+        .foregroundColor(Color.purple)
         .padding()
         .font(Font.largeTitle)
     }
@@ -31,10 +31,10 @@ struct CardView: View {
         ZStack {
             if card.isFaceUp {
                 RoundedRectangle(cornerRadius: 10.0).fill(Color.white)
-                RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3.0)
+                RoundedRectangle(cornerRadius: 10.0).stroke(lineWidth: 3.0).aspectRatio(2/3, contentMode: .fit)
                 Text(card.content)
             } else {
-                RoundedRectangle(cornerRadius: 10.0).fill()
+                RoundedRectangle(cornerRadius: 10.0).fill().aspectRatio(2/3, contentMode: .fit)
             }
         }
     }
@@ -42,6 +42,8 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: EmojiMemoryGame())
+        Group {
+            ContentView(viewModel: EmojiMemoryGame())
+        }
     }
 }
