@@ -20,13 +20,13 @@ struct ContentView: View {
         }
         .foregroundColor(Color.purple)
         .padding()
-        .font(Font.largeTitle)
+        .font(viewModel.cards.count > 8 ? Font.body : Font.largeTitle)
     }
 }
  
 struct CardView: View {
-    var card : MemoryGame<String>.Card
-    
+    var card: MemoryGame<String>.Card
+
     var body: some View {
         ZStack {
             if card.isFaceUp {
