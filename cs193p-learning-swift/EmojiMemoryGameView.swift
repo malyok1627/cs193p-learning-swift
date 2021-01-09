@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  EmojiMemoryGameView.swift
 //  cs193p-learning-swift
 //
 //  Created by Yaroslav Smalko on 17.10.20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct EmojiMemoryGameView: View {
     var viewModel: EmojiMemoryGame
     
     var body: some View {
@@ -24,7 +24,7 @@ struct ContentView: View {
     }
 }
  
-struct CardView: View {
+struct CardView: View { 
     var card: MemoryGame<String>.Card
 
     var body: some View {
@@ -43,7 +43,7 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView(viewModel: EmojiMemoryGame())
+            EmojiMemoryGameView(viewModel: EmojiMemoryGame())
         }
     }
 }
